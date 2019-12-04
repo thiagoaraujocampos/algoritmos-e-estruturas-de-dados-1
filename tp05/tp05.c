@@ -30,30 +30,27 @@ int verifica(int **m, int col, int row, int n) {
 }
 
 // Resolve o problema recursivamente
-int resolveRainha(int **m, int col, int n) {
-  // Essa varíavel serve para verificar se existe solução
-  int aval = 0;  
+void resolveRainha(int **m, int col, int n) {
   // Caso base (quando a coluna chegar em N então acabou as colunas para verificar)
   if(col == n) {
     cont++; // Contador para verificar qnt de soluções
-    return 1;
+    return ;
   }
   // For para percorrer as N linhas de uma coluna
   for (int i = 0; i < n; i++) {    
     if (verifica(m, col, i, n)) {
       m[i][col] = 1; // Coloca uma rainha em m[i][col]
       // Recursão para próxima coluna
-      aval = (resolveRainha(m, col+1, n) || aval) ? 1 : 0;
+      resolveRainha(m, col+1, n);
       m[i][col] = 0; // Um backtracking removendo a queen da posição m[i][col]
     }
   }
-  return aval;
 }
 
 int main() {
   int n;
   scanf("%d", &n);
-
+  
   // Aloca a matriz dinamicamente.
   int **m;
   m = (int **) malloc(n * sizeof(int *));
