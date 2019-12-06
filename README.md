@@ -17,7 +17,9 @@ Foram desenvolvidos, em C, os seguintes projetos:
    * Enumeração (Subconjunto, Subsequência e Permutação)
    * Backtracking 
 
- -> Fila
+
+---
+ **-> Fila**
 
  Uma fila é uma sequência de dados dinâmica. Ou seja, é uma sequência que permite operações de inserção e remoção, assim como listas e pilhas. No entanto, em uma fila, a inserção e a remoção ocorrem nos extremos opostos da sequência.
 
@@ -54,9 +56,9 @@ x = q[ini++];
 
 Assim, tanto a inserção como a remoção podem ser feitas em O(1) - tempo constante.
 
+---
 
-
-- Implementação circular de fila em vetor
+**- Implementação circular de fila em vetor**
 
 ![Fila circular](https://www.researchgate.net/profile/Renan_Ferreira3/publication/277151084/figure/fig19/AS:391833613029382@1470431821526/Figura-319-Fila-Circular-No-sistema-de-comunicacao-utilizado-Max-20.png)
 
@@ -90,7 +92,7 @@ else
   tam = (n-ini) + fim;
 ```
 
- - Implementação de fila em lista encadeada
+- Implementação de fila em lista encadeada
 
   Como fila é **FIFO** é interessante manter o ponteiro para a primeira célula da fila e outro para a última.
 
@@ -134,16 +136,17 @@ int *distancias(int **A, int n, int x)
   return dist;
 }
 ```
-Análise:
 
-- Matriz de adjacência
+**Análise:**
+
+- **Matriz de adjacência**
   Para representar uma rede de n vértices: O(n²)
 
   * Facilidade em saber se dois vértices são vizinhos
   * Desperdicio de memória
   * O(n) para olhar todos vizinhos mesmo com poucos
 
-- Lista de adjacência
+- **Lista de adjacência**
 
 Alternativa para matriz de adjacência. Cria-se um vetor (ou lista) para cada vértice e à cada vértice associa-se uma lista de seus vizinhos.
 
@@ -155,7 +158,9 @@ Alternativa para matriz de adjacência. Cria-se um vetor (ou lista) para cada v�
  * É necessário percorrer todas as lista quando precisamos verificar quais nós possuem conexão para um nó j
 
 
- - Filas de prioridade
+---
+
+**- Filas de prioridade**
 
  Filas de prioridade são um tipo abstrato de dados em que cada elemento está associado a um valor que indica sua prioridade. (generaliza tanto filas quanto pilhas)
 
@@ -194,6 +199,8 @@ O(n) no pior caso.
   * Uma folha (ou nó terminal) é um nó que não possui filhos
   * A altura de uma árvore é definida como o maior caminho da raiz até uma folha.
   * Uma árvore M-ária é uma que todos possuem M filhos, com exceção das folhas.
+
+---
 
 **Árvores binárias**
 
@@ -260,7 +267,7 @@ int altura(Arvore r)
 }
 ```
 
-- Percursos em árvore
+**- Percursos em árvore**
 
   * Percurso em pré-ordem (r-e-d)
 
@@ -316,7 +323,9 @@ int altura(Arvore r)
   }
   ```
 
--> Implementação de uma fila de prioridade utilizando _heap_
+---
+
+**-> Implementação de uma fila de prioridade utilizando _heap_**
 
   Uma heap de máximo é uma árvore binária completa (ou quase-completa) cujos nós respeitam a seguinte propriedade
 
@@ -330,11 +339,11 @@ int altura(Arvore r)
      * O filho da esquerda está na pos 2i + 1
      * O filho da direita está na pos 2i + 2
 
-     ```c++
-    #define PAI(i) ((i - 1) / 2)
-    #define FILHO_ESQ(i) (2 * i + 1)
-    #define FILHO_DIR(i) (2 * i + 2)
-     ```
+      ```c++
+      #define PAI(i) ((i - 1) / 2)
+      #define FILHO_ESQ(i) (2 * i + 1)
+      #define FILHO_DIR(i) (2 * i + 2)
+      ```
 
     * Se o FILHO_ESQ(i) ≥ m, então i não possui filho esquerdo.
     * Se o FILHO_DIR(i) ≥ m, então i não possui filho direito.
@@ -400,6 +409,7 @@ int altura(Arvore r)
   }
   ```
 
+---
   
 -> Algoritmos de ordenação
 
@@ -545,6 +555,8 @@ int altura(Arvore r)
   }
   ```
 
+---
+
   - _Heapify_ O(m)
 
     * A operação heapify é interessante na manipulação de heaps, transformando um vetor de tamanho m em um heap em O(m) operações.
@@ -571,9 +583,13 @@ int altura(Arvore r)
   }
   ```
 
+---
+
   -> Problemas da seleção e contagem de inversões
 
   TRABALHO GENOMA
+
+---
 
   -> Tabela de Simbolos
 
@@ -604,7 +620,9 @@ int altura(Arvore r)
   }
   ```
 
--> Árvore binária de busca
+---
+
+**-> Árvore binária de busca**
 
   ![Arvore bin busca](https://i.imgur.com/IuPzb9U.png)
 
@@ -613,6 +631,8 @@ int altura(Arvore r)
   _Resumo das operações em tabela de símbolos_
   ![tabela](https://i.imgur.com/o4lJPkX.png)
 
--> Enumeração, permutações e subconjuntos
+---
+
+**-> Enumeração, permutações e subconjuntos**
 
   * Para a solução de certos problemas combinatórios é necessário enumerar explicitamente todos os objetos de um determinado tipo. Em geral, o número de objetos a serem enumerados é muito grande. Mas, certas vezes, é o melhor a fazer, ou, ao menos, serve como ponto de partida.
